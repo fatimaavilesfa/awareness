@@ -1,0 +1,26 @@
+{
+  "name": "awareness",
+  "version": "1.0.0",
+  "description": "Diabetes awareness",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatimaavilesfa/awareness.git"
+  },
+  "keywords": [
+    "Diabetes"
+  ],
+  "author": "Fatima Aviles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fatimaavilesfa/awareness/issues"
+  },
+  "homepage": "https://github.com/fatimaavilesfa/awareness#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1"
+  }
+}
