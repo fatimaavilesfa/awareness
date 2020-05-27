@@ -4,15 +4,65 @@
         <title>Diabetes</title>
         <link rel="icon" href="/img/blood.ico">
         <link rel="stylesheet" href="./css/styles.css">
+        
     </head>
     <body>
-        {{>header}}
-        <p>This test will only give you an idea, it is better to consult your doctor</p>
-        <form>
-            <input placeholder="test">
-            <button>Submit</button>
-        </form>
-        <p id="test"></p>
+        <div class="main">
+            {{>header}}
+            <p>This test will only give you an idea, it is better to consult your doctor</p>
+
+            <form id="formid">
+                <p>Please select your gender:</p>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+
+                <br>  
+
+                <p>Please select your age range:</p>
+                <input type="radio" id="40" name="age" value="40" required>
+                <label for="40">Less than 40 years</label><br>
+                <input type="radio" id="59" name="age" value="59">
+                <label for="59">40 up to 59</label><br>  
+                <input type="radio" id="60" name="age" value="60">
+                <label for="60">Over 60</label><br>
+
+                <br>
+
+                <p>Are you physically active?</p>
+                <input type="radio" id="yes" name="activity" value="yes" required>
+                <label for="yes">Yes</label><br>
+                <input type="radio" id="no" name="activity" value="no">
+                <label for="no">No</label><br>  
+
+                <br>
+
+                <p>Please provide the following in metric:</p>
+                <input type="text" id="height" placeholder="height exp. 1.52" required>
+                <input type="text" id="weight" placeholder="weight"  required>
+
+                <br>
+
+                <p>Have any of your blood relatives have ever been diagnosed with diabetes?</p>
+                <input type="checkbox" id="mother" value="mother" name="family">
+                <label for="mother">Mother</label><br>
+                <input type="checkbox" id="father" value="father" name="family">
+                <label for="father">Father</label><br> 
+                <input type="checkbox" id="siblings" value="siblings" name="family">
+                <label for="siblings">Siblings</label><br> 
+
+                <br>
+                <br>
+
+                <button class="popup" id="delete">
+                    Submit
+                    <span class="popuptext" id="myPopup"></span>
+                </button>
+
+            </form>
+
+        </div>
         {{>footer}}
         <script src="/js/app.js"></script>
     </body>
