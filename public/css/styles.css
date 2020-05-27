@@ -48,11 +48,16 @@ input {
 button {
     cursor: pointer;
     border: 1px solid #888888;
+    border-radius: 11px;
     background: #888888;
     padding: 8px;
+    color: white;
 }
 
 /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+#boxes {
+  flex-direction: row;
+}
 .flip-box {
     background-color: transparent;
     width: 300px;
@@ -98,6 +103,12 @@ button {
     transform: rotateY(180deg);
   }
 
+ #boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-auto-rows: minmax(220px, auto);
+}
+ 
   /* styles to add a popup box when text is submited */
   .popup {
     position: relative;
@@ -107,6 +118,7 @@ button {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    
   }
   
   /* The actual popup */
