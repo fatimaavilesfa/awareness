@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
         title: 'Diabetes',
         subTitle: 'What is Diabetes',
         name: 'Fatima Aviles',
-        info: 'More information'
+        info: 'For more information visit : '
         
     })
 })
@@ -28,7 +28,7 @@ app.get('/consequences', (req, res) => {
         title: 'Diabetes',
         subTitle: 'Consequences',
         name: 'Fatima Aviles',
-        info: 'More information'
+        info: 'For more information visit : '
         
     })
 })
@@ -39,7 +39,7 @@ app.get('/prevention', (req, res) => {
         title: 'Diabetes',
         subTitle: 'How to prevent',
         name: 'Fatima Aviles',
-        info: 'More information'
+        info: 'For more information visit : '
         
     })
 })
@@ -49,7 +49,7 @@ app.get('/test', (req, res) => {
         title: 'Diabetes',
         subTitle: 'Take a Test',
         name: 'Fatima Aviles',
-        info: 'More information'
+        info: 'For more information visit : '
         
     })
 })
