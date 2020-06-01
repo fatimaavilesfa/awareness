@@ -3,6 +3,7 @@ const express = require('express')
 const hbs = require('hbs')
 
 const app = express()
+const port = process.env.PORT || 3333
 
 const public = path.join(__dirname, '../public')
 const view = path.join(__dirname, '../templates/views')
@@ -65,6 +66,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(5555, () => {
-    console.log('server is up on port 5555')
+app.listen(port, () => {
+    console.log(`server is up on port ${port}`)
 })
