@@ -23,16 +23,24 @@ header {
 }
 
 header a {
-    color: #888888;
+    color: #0f02fa;
     margin-right: 16px;
     text-decoration: none;
+    cursor: pointer;
 }
+
 
 footer {
     color: #888888;
     border-top: 1px solid #eeeeee;
     margin-top: 16px;
     padding: 16px 0;
+}
+
+footer a {
+  color: #0f02fa;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 h1 {
@@ -52,11 +60,13 @@ button {
     background: #888888;
     padding: 8px;
     color: white;
+    cursor: pointer;
 }
 
 /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 #boxes {
   flex-direction: row;
+  cursor: pointer;
 }
 .flip-box {
     background-color: transparent;
@@ -152,4 +162,26 @@ button {
   @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity:1 ;}
+  }
+
+  @media screen and (max-width: 600px) {
+    header a {
+      float: none;
+      width: 100%;
+    }
+    h1 {
+      font-size: 32px;
+    }
+    h4 {
+      color: #0f02fa;
+      cursor: pointer;
+    }
+    h4::after { 
+      content: "";
+      margin-bottom: 0px;
+    }
+    .text {
+      visibility: hidden;
+    }
+    
   }

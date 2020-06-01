@@ -18,7 +18,7 @@ app.use(express.static(public))
 app.get('/', (req, res) => {
     res.render('index', {
         title: 'Diabetes',
-        subTitle: 'What is Diabetes',
+        subTitle: 'What is Diabetes?',
         name: 'Fatima Aviles',
         info: 'For more information visit : '
         
@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 app.get('/consequences', (req, res) => {
     res.render('consequences', {
         title: 'Diabetes',
-        subTitle: 'Consequences',
+        subTitle: 'What long-term problems may affect people with diabetes?',
         name: 'Fatima Aviles',
         info: 'For more information visit : '
         

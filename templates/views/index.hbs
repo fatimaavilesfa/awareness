@@ -8,33 +8,52 @@
     <body>
         <div class="main">
             {{>header}}
-            <p>Overall Information about diabetes</p>
             <p>Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is
                your main source of energy and comes from the food you eat. Insulin, a hormone made by the pancreas, helps glucose 
                from food get into your cells to be used for energy. Sometimes your body doesn’t make enough—or any—insulin or doesn’t 
                use insulin well. Glucose then stays in your blood and doesn’t reach your cells.</p>
             <br>
-            <h4>Type 1 diabetes</h4>
-            <p>If you have type 1 diabetes, your body does not make insulin. Your immune system attacks and destroys the cells in your 
-                pancreas that make insulin. Type 1 diabetes is usually diagnosed in children and young adults, although it can appear at 
-                any age. People with type 1 diabetes need to take insulin every day to stay alive.</p>
+            <div  >
+                <h4 id="1" onclick="responsive(this)">Type 1 diabetes</h4>
+                <span class="text" id="text1">
+                    If you have type 1 diabetes, your body does not make insulin. Your immune system attacks and destroys the cells in your 
+                    pancreas that make insulin. Type 1 diabetes is usually diagnosed in children and young adults, although it can appear at 
+                    any age. People with type 1 diabetes need to take insulin every day to stay alive.
+                </span>
             <br>
-            <h4>Type 2 diabetes</h4>
-            <p>If you have type 2 diabetes, your body does not make or use insulin well. You can develop type 2 diabetes at any age, even
-                 during childhood. However, this type of diabetes occurs most often in middle-aged and older people. Type 2 is the most common 
-                 type of diabetes.</p>
-            <h4>Gestational diabetes</h4>
-            <p>Gestational diabetes develops in some women when they are pregnant. Most of the time, this type of diabetes goes away after the
-                 baby is born. However, if you’ve had gestational diabetes, you have a greater chance of developing type 2 diabetes later in life.
-                  Sometimes diabetes diagnosed during pregnancy is actually type 2 diabetes.</p>
+            </div>
+            <div  >
+                <h4 id="2" onclick="responsive(this)">Type 2 diabetes</h4>
+                <span class="text" id="text2">
+                    If you have type 2 diabetes, your body does not make or use insulin well. You can develop type 2 diabetes at any age, even
+                    during childhood. However, this type of diabetes occurs most often in middle-aged and older people. Type 2 is the most common 
+                    type of diabetes.
+                </span>
+                <br>
+            </div>
+            <div  >
+                <h4 id="3" onclick="responsive(this)">Gestational diabetes</h4>
+                <span class="text" id="text3">
+                    Gestational diabetes develops in some women when they are pregnant. Most of the time, this type of diabetes goes away after the
+                    baby is born. However, if you’ve had gestational diabetes, you have a greater chance of developing type 2 diabetes later in life.
+                    Sometimes diabetes diagnosed during pregnancy is actually type 2 diabetes.
+                </span>
+                <br>
+            </div>
+            <div  >
+                <h4 id="4" onclick="responsive(this)">Prediabetes</h4>
+                <span class="text" id="text4">
+                    Occurs when your blood sugar is higher than normal, but it’s not high enough for a diagnosis of type 2 diabetes.
+                    If there is no action taken it can eventually become type 2 diabetes.
+                </span>
+            </div>
             <br>
-            <h4>Prediabetes</h4>
-            <p>Occurs when your blood sugar is higher than normal, but it’s not high enough for a diagnosis of type 2 diabetes.
-                If there is no action taken it can eventually become type 2 diabetes.
-            </p>
-            <p>About 422 million people worldwide have diabetes, particularly in low-and middle-income countries, and 1.6 million deaths are directly 
-                attributed to diabetes each year.</p>
+                <p>
+                    About 422 million people worldwide have diabetes, particularly in low-and middle-income countries, and 1.6 million deaths are directly 
+                    attributed to diabetes each year.
+                </p>
         </div>
         {{>footer}}
+        <script src="/js/appindex.js"></script>
     </body>
 </html>

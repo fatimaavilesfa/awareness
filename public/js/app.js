@@ -75,3 +75,5 @@ const getValue = (options) =>  {
     document.getElementById('formid').reset()
   }, 2000);
 });
+
+
