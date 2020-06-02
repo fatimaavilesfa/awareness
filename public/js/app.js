@@ -19,16 +19,21 @@ const getValue = (options) =>  {
         age =  getValue(document.getElementsByName('age')),
         active = getValue(document.getElementsByName('activity')), 
         relatives = getValue(document.getElementsByName('family')),
+        pressure = getValue(document.getElementsByName('pressure')),
         popup = document.getElementById("myPopup"),
+        sugar = document.getElementById('sugar').value,
         score = 0,
         message,
         bmi;
+
+   
+
     //to mesure the bmi
-    let height = Number(document.getElementById("height").value);
-    let weight = Number(document.getElementById("weight").value);
+    let height = Number(document.getElementById('height').value);
+    let weight = Number(document.getElementById('weight').value);
     bmi =  weight / (height * height);
     
-    if(gender[0] === "male") {
+    if(gender[0] === 'male') {
       score++;
     }
     if(age[0] === '59') {
@@ -52,17 +57,23 @@ const getValue = (options) =>  {
     else if(relatives.length > 1) {
       score += 2;
     }
+    if(sugar !== 'no') {
+      score++;
+    }
+    if(pressure === 'yes') {
+      score++;
+    }
    
     if(score < 3) {
       message = "Low risk!"
     }
-    else if(score < 6) {
+    else if(score < 7) {
       message = "Medium risk!"
     } else {
       message = "High risk, please visit a doctor!"
     }
    
-    console.log(gender, age, active, relatives, bmi)
+    console.log(gender, age, active, relatives, bmi, sugar)
 
  //to display the result of test
  popup.textContent = message;
@@ -73,7 +84,7 @@ const getValue = (options) =>  {
   setTimeout(() => {
     document.getElementById("delete").click()
     document.getElementById('formid').reset()
-  }, 2000);
+  }, 3000);
 });
 
 

@@ -43,6 +43,7 @@
                 <input type="text" id="weight" placeholder="weight"  required>
 
                 <br>
+                <br>
 
                 <p>Have any of your blood relatives have ever been diagnosed with diabetes?</p>
                 <input type="checkbox" id="mother" value="mother" name="family">
@@ -51,6 +52,26 @@
                 <label for="father">Father</label><br> 
                 <input type="checkbox" id="siblings" value="siblings" name="family">
                 <label for="siblings">Siblings</label><br> 
+
+                <br>
+
+                <p>Have you ever been found to have high blood sugar?</p>
+                <select name="sugar" id="sugar" required>
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="test">From a blood test</option>
+                    <option value="illness">During an illness</option>
+                    <option value="preg">During pregnancy</option>
+                    <option value="no">No or don't know</option>
+                </select>
+
+                <br>
+                <br>
+
+                <p>Have you ever been told by a doctor that you have hight blood pressure?</p>
+                <input type="radio" id="yes" name="pressure" value="yes" required>
+                <label for="yes">Yes</label><br>
+                <input type="radio" id="no" name="pressure" value="no">
+                <label for="no">No</label><br>  
 
                 <br>
                 <br>

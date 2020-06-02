@@ -1,7 +1,14 @@
 body {
-    color: #333333;
+    color: #263238;
+    background-image: url("../img/sea.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #00b8d4;
+    z-index: -1;
     font-family: arial;
-    max-width: 650px;
+    max-width: 950px;
     margin: 0 auto;
     padding: 0 16px;
     display: flex;
@@ -9,8 +16,12 @@ body {
     min-height: 100vh;
 }
 
+
 .main {
     flex-grow: 1;
+    background-color: rgba(255,255,255, 0.7);
+    margin-top: 20px;
+    padding: 35px;
 }
 
 .portrait {
@@ -20,29 +31,24 @@ body {
 header {
     margin-top: 16px;
     margin-bottom: 48px;
+    color: #263238;
 }
-
-header a {
+a {
     color: #0f02fa;
     margin-right: 16px;
     text-decoration: none;
     cursor: pointer;
 }
 
-
 footer {
-    color: #888888;
-    border-top: 1px solid #eeeeee;
-    margin-top: 16px;
-    padding: 16px 0;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(2);
 }
-
 footer a {
-  color: #0f02fa;
-  text-decoration: none;
-  cursor: pointer;
+  color: whitesmoke;
+  text-decoration: #0d47a1;
 }
-
 h1 {
     font-size: 64px;
     margin-bottom: 16px;
@@ -55,19 +61,23 @@ input {
 
 button {
     cursor: pointer;
-    border: 1px solid #888888;
+    border: 1px solid #0d47a1;
     border-radius: 11px;
-    background: #888888;
+    background: #0d47a1;
     padding: 8px;
-    color: white;
+    color: #ffffff;
     cursor: pointer;
 }
-
-/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 #boxes {
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-auto-rows: minmax(220px, auto);
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
 }
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+
 .flip-box {
     background-color: transparent;
     width: 300px;
@@ -108,16 +118,10 @@ button {
   
   /* Style the back side */
   .flip-box-back {
-    background-color: #888888;
+    background-color: #00b8d4;
     color: white;
     transform: rotateY(180deg);
   }
-
- #boxes {
-  display: grid;
-  grid-template-columns: repeat(2, 2fr);
-  grid-auto-rows: minmax(220px, auto);
-}
  
   /* styles to add a popup box when text is submited */
   .popup {
@@ -135,8 +139,9 @@ button {
   .popup .popuptext {
     visibility: hidden;
     width: 277px;
-    background-color: #888888;
+    background-color: #0d47a1;
     color: white;
+    font-size: 22px;
     text-align: center;
     border-radius: 6px;
     padding: 15px 15px;
@@ -151,6 +156,14 @@ button {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
+  }
+  #sugar {
+    cursor: pointer;
+    border: 1px solid #0d47a1;
+    background: #0d47a1;
+    padding: 8px;
+    color: #ffffff;
+    cursor: pointer;
   }
   
   /* Add animation (fade in the popup) */
@@ -182,6 +195,9 @@ button {
     }
     .text {
       visibility: hidden;
+    }
+    #boxes {
+      grid-template-columns: repeat(1, 2fr);
     }
     
   }
