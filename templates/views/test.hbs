@@ -46,32 +46,43 @@
                 <br>
 
                 <p>Have any of your blood relatives have ever been diagnosed with diabetes?</p>
-                <input type="checkbox" id="mother" value="mother" name="family">
-                <label for="mother">Mother</label><br>
-                <input type="checkbox" id="father" value="father" name="family">
-                <label for="father">Father</label><br> 
-                <input type="checkbox" id="siblings" value="siblings" name="family">
-                <label for="siblings">Siblings</label><br> 
+                <input type="radio" id="yes" name="family" value="yes" onclick="hasFam(this)" required>
+                <label for="yes">Yes</label><br>
+                <input type="radio" id="no" name="family" value="no" onclick="hasFam(this)">
+                <label for="no">No</label><br>
+                <span id="yesFam"></span>  
 
                 <br>
 
-                <p>Have you ever been found to have high blood sugar?</p>
-                <select name="sugar" id="sugar" required>
+                <p>Have you ever been told by a doctor that you have high blood pressure?</p>
+                <select name="pressure" id="pressure" required>
                     <option value="" disabled selected>Select your option</option>
-                    <option value="test">From a blood test</option>
-                    <option value="illness">During an illness</option>
-                    <option value="preg">During pregnancy</option>
-                    <option value="no">No or don't know</option>
+                    <option value="140">Yes it was around 140/90</option>
+                    <option value="170">Yes it was 170/100 or higher</option>
+                    <option value="hyper">Yes I have been diagnosed with hypertension</option>
+                    <option value="no"> No </option>
                 </select>
 
                 <br>
                 <br>
+                <br>
+                <p>Select all the options that you experience regularly</p>
 
-                <p>Have you ever been told by a doctor that you have hight blood pressure?</p>
-                <input type="radio" id="yes" name="pressure" value="yes" required>
-                <label for="yes">Yes</label><br>
-                <input type="radio" id="no" name="pressure" value="no">
-                <label for="no">No</label><br>  
+                <input type="checkbox" id="blurry" value="blurry" name="symptoms">
+                <label for="blurry">Blurry vision</label><br>
+
+                <input type="checkbox" id="tired" value="tired" name="symptoms">
+                <label for="tired">Feeling very tired</label><br> 
+
+                <input type="checkbox" id="hungry" value="hungry" name="symptoms">
+                <label for="hungry">Always feeling hungry</label><br>
+
+                <input type="checkbox" id="thirst" value="thirst" name="symptoms">
+                <label for="thirst">Increased thirst</label><br>
+
+                <input type="checkbox" id="urination" value="urination" name="symptoms">
+                <label for="urination">Frequent urination</label><br>
+
 
                 <br>
                 <br>
