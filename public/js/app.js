@@ -18,7 +18,7 @@ function hasFam(element) {
   }
   if(element.id === 'yes') {
     document.getElementById('yesFam').innerHTML = `
-    <p>Slect the ones that apply</p>
+    <p>Select the ones that apply</p>
     <input type="checkbox" id="mother" value="mother" name="famMemb">
                 <label for="mother">Mother</label><br>
                 <input type="checkbox" id="father" value="father" name="famMemb">
