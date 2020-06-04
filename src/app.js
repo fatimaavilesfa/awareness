@@ -11,11 +11,15 @@ const partial = path.join(__dirname, '../templates/partials')
 
 const mongoose = require('mongoose')
 const Users = require('./dbmodel')
-const mongopw = process.env.MONGO_ATLAS_PW
 
-console.log(process.env)
-//mongoose.connect(`mongodb+srv://fatima:${mongopw}@/diabetes-x1ecb.mongodb.net/users?retryWrites=true&w=majority`, {useNewUrlParser: true});
+const MONGODB_URI = process.env.MONGODB_URI.slice(1, -1)
 
+console.log(MONGODB_URI)
+mongoose.connect(MONGODB_URI || 'mongodb://localhost/users_data');
+
+mongoose.connection.on('connected', () => {
+    console.log('Mongoose is connected')
+})
 
 app.set('view engine', 'hbs')
 app.set('views', view)
@@ -78,17 +82,23 @@ app.get('/data/:data', (req, res) => {
         syntoms: syntoms
     });
 
-    // user
-    //     .save()
-    //     .then(result => {
-    //         console.log(result)
-    //     })
-    //     .catch(err => console.log(err));
+    user
+        .save()
+        .then(result => {
+            console.log(result);
+            res.status(201).json({
+                message: "Handling POST request to users",
+                createduserData: result
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({
+                error: err
+            })
+        });
 
-    //     res.status(201).json({
-    //         message: "Handling POST request to users",
-    //         createduserData: user
-    //     });
+        
 })
 
 app.get('/*', (req, res) => {

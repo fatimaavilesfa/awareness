@@ -110,7 +110,6 @@ function hasFam(element) {
    
     console.log(gender, age, active, relatives, symptoms, bmi)
 
-    fetch( `/data/${gender},${age},${active},${bmi},${pressure},${[relatives]},${[symptoms]}`);
       
 
  //to display the result of test
@@ -120,6 +119,7 @@ function hasFam(element) {
 
 
   setTimeout(() => {
+    fetch( `/data/${gender},${age},${active},${bmi},${pressure},${[relatives]},${[symptoms]}`);
     document.getElementById('delete').click()
     document.getElementById('formid').reset()
   }, 3000);
