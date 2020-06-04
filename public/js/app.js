@@ -1,4 +1,4 @@
-const form = document.querySelector( "form" )
+const form = document.querySelector( 'form' )
  
 //function to get value
 const getValue = (options) =>  {
@@ -14,17 +14,17 @@ const getValue = (options) =>  {
 //to display  relatives options
 function hasFam(element) {
   if(element.id === 'no') {
-    document.getElementById('yesFam').innerHTML = "";
+    document.getElementById('yesFam').innerHTML = '';
   }
   if(element.id === 'yes') {
     document.getElementById('yesFam').innerHTML = `
     <p>Select the ones that apply</p>
-    <input type="checkbox" id="mother" value="mother" name="famMemb">
-                <label for="mother">Mother</label><br>
-                <input type="checkbox" id="father" value="father" name="famMemb">
-                <label for="father">Father</label><br> 
-                <input type="checkbox" id="siblings" value="siblings" name="famMemb">
-                <label for="siblings">Siblings</label><br>
+    <input type='checkbox' id='mother' value='mother' name='famMemb'>
+                <label for='mother'>Mother</label><br>
+                <input type='checkbox' id='father' value='father' name='famMemb'>
+                <label for='father'>Father</label><br> 
+                <input type='checkbox' id='siblings' value='siblings' name='famMemb'>
+                <label for='siblings'>Siblings</label><br>
     `;
   }
 }
@@ -39,7 +39,7 @@ function hasFam(element) {
         active = getValue(document.getElementsByName('activity')), 
         relatives = getValue(document.getElementsByName('famMemb')),
         symptoms = getValue(document.getElementsByName('symptoms')),
-        popup = document.getElementById("myPopup"),
+        popup = document.getElementById('myPopup'),
         pressure = document.getElementById('pressure').value,
         score = 0,
         message,
@@ -100,24 +100,27 @@ function hasFam(element) {
 
     //mesure the risk
     if(score < 4) {
-      message = "Low risk!"
+      message = 'Low risk!'
     }
     else if(score < 9) {
-      message = "Medium risk!"
+      message = 'Medium risk!'
     } else {
-      message = "High risk, please visit a doctor!"
+      message = 'High risk, please visit a doctor!'
     }
    
-    console.log(gender, age, active, relatives, bmi)
+    console.log(gender, age, active, relatives, symptoms, bmi)
+
+    fetch( `/data/${gender},${age},${active},${bmi},${pressure},${[relatives]},${[symptoms]}`);
+      
 
  //to display the result of test
  popup.textContent = message;
- popup.classList.toggle("show");
+ popup.classList.toggle('show');
 
 
 
   setTimeout(() => {
-    document.getElementById("delete").click()
+    document.getElementById('delete').click()
     document.getElementById('formid').reset()
   }, 3000);
 });

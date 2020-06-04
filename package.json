@@ -21,6 +21,7 @@
   "homepage": "https://github.com/fatimaavilesfa/awareness#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "hbs": "^4.1.1"
+    "hbs": "^4.1.1",
+    "mongoose": "^5.9.17"
   }
 }
