@@ -81,9 +81,11 @@ app.post('/data', (req, res) => {
     user
         .save()
         .then(result => {
+            console.log('this is no error. here errors are not')
             console.log(result);
         })
         .catch(err => {
+            console.log('I am definitely, unequivocably an error. If you see me, this is an error. Hi heroku logs')
             console.log(err);
         });
     res.end('holis')
