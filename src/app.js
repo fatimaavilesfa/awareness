@@ -17,7 +17,6 @@ const MONGODB_URI = process.env.MONGODB_URI.slice(1, -1)
 app.use(express.json());
 
 
-console.log(MONGODB_URI)
 mongoose.connect(MONGODB_URI || 'mongodb://localhost/users_data');
 
 mongoose.connection.on('connected', () => {
@@ -69,7 +68,6 @@ app.get('/test', (req, res) => {
     })
 })
 app.post('/data', (req, res) => {
-    console.log(req.body)
     const userData = req.body
    
     const user = new Users({
@@ -82,13 +80,14 @@ app.post('/data', (req, res) => {
         .then(result => {
             console.log('this is no error. here errors are not')
             console.log(result);
+            res.end(result)
         })
         .catch(err => {
             console.log('I am definitely, unequivocably an error. If you see me, this is an error. Hi heroku logs')
+            res.end(err)
             console.log(err);
         });
-    res.end()
-        
+    // res.end()
 })
 
 app.get('/*', (req, res) => {
