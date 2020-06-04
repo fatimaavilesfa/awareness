@@ -54,6 +54,10 @@ footer a {
   color: whitesmoke;
   text-decoration: #0d47a1;
 }
+footer a:hover {
+  color: #0d47a1;
+  background-color: white;
+}
 h1 {
     font-size: 64px;
     margin-bottom: 16px;

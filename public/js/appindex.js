@@ -15,7 +15,7 @@ function responsive(item) {
         if(num == 2) {
             document.getElementById('t'+num).innerHTML = `
                 <p>
-                    If you have type 2 diabetes, your body does not make or use insulin well. You can develop type 2 diabetes at any age, even
+                    If you have type 2 diabetes, your body does not  use insulin well. You can develop type 2 diabetes at any age, even
                     during childhood. However, this type of diabetes occurs most often in middle-aged and older people. Type 2 is the most common 
                     type of diabetes.
                 </p>
