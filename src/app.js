@@ -14,6 +14,9 @@ const Users = require('./dbmodel')
 
 const MONGODB_URI = process.env.MONGODB_URI.slice(1, -1)
 
+app.use(express.json());
+
+
 console.log(MONGODB_URI)
 mongoose.connect(MONGODB_URI || 'mongodb://localhost/users_data');
 
@@ -65,39 +68,25 @@ app.get('/test', (req, res) => {
         info: 'For more information visit : '
     })
 })
-app.get('/data/:data', (req, res) => {
-    const userData = req.params.data.split(",");
-    const relatives = userData.filter(e => e === 'mother' || e === 'father' || e ===  'siblings')
-    const syntoms = userData.filter(e => e === 'blurry' || e === 'tired' || e === 'hungry' || e === 'thirst' || e === 'urination')
+app.post('/data', (req, res) => {
+    console.log(req.body)
+    const userData = req.body
    
     const user = new Users({
         _id: new mongoose.Types.ObjectId(),
         date: new Date(),
-        gender: userData[0],
-        age: userData[1],
-        active:userData[2],
-        bmi: userData[3],
-        pressure: userData[4],
-        relatives: relatives,
-        syntoms: syntoms
+        ...userData
     });
 
     user
         .save()
         .then(result => {
             console.log(result);
-            res.status(201).json({
-                message: "Handling POST request to users",
-                createduserData: result
-            });
         })
         .catch(err => {
             console.log(err);
-            res.status(500).json({
-                error: err
-            })
         });
-
+    res.end('holis')
         
 })
 

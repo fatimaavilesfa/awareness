@@ -34,9 +34,9 @@ function hasFam(element) {
     //method cancels the event if it is cancelable
     event.preventDefault();
     //variables needed 
-    let gender = getValue(document.getElementsByName('gender')),
-        age =  getValue(document.getElementsByName('age')),
-        active = getValue(document.getElementsByName('activity')), 
+    let gender = getValue(document.getElementsByName('gender'))[0],
+        age =  getValue(document.getElementsByName('age'))[0],
+        active = getValue(document.getElementsByName('activity'))[0], 
         relatives = getValue(document.getElementsByName('famMemb')),
         symptoms = getValue(document.getElementsByName('symptoms')),
         popup = document.getElementById('myPopup'),
@@ -53,18 +53,18 @@ function hasFam(element) {
     bmi =  weight / (height * height);
     
     //add point to score
-    if(gender[0] === 'male') {
+    if(gender === 'male') {
       score++;
     }
 
-    if(age[0] === '59') {
+    if(age === '59') {
       score++;
     }
-    else if(age[0] === '60') {
+    else if(age === '60') {
       score += 2;
     }
 
-    if(active[0] === 'no') {
+    if(active === 'no') {
       score++;
     }
 
@@ -112,14 +112,29 @@ function hasFam(element) {
 
       
 
- //to display the result of test
- popup.textContent = message;
- popup.classList.toggle('show');
+  //to display the result of test
+  popup.textContent = message;
+  popup.classList.toggle('show');
 
 
 
   setTimeout(() => {
-    fetch( `/data/${gender},${age},${active},${bmi},${pressure},${[relatives]},${[symptoms]}`);
+    fetch('/data', {
+      method: "post",
+      headers: {
+        'Accept': 'application/text',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        gender,
+        age,
+        active,
+        bmi,
+        pressure,
+        relatives,
+        symptoms
+      })
+    });
     document.getElementById('delete').click()
     document.getElementById('formid').reset()
   }, 3000);
