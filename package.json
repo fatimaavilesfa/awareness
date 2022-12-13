@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/fatimaavilesfa/awareness#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "hbs": "^4.1.1",
     "mongodb": "^3.5.8",
     "mongoose": "^5.0.15"
